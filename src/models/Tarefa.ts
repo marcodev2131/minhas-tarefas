@@ -1,4 +1,5 @@
 import * as enums from '../utils/enums/Tarefa'
+
 class Tarefa {
   titulo: string
   prioridade: enums.Prioridade
