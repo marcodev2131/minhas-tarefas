@@ -1,12 +1,14 @@
 import { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
+
 import * as S from './styles'
 
 import * as enums from '../../utils/enums/Tarefa'
-import { remover, editar } from '../../store/reducers/tarefas'
-import tarefaClass from '../../models/Tarefa'
 
-type Props = tarefaClass
+import { remover, editar } from '../../store/reducers/tarefas'
+import TarefaClass from '../../models/Tarefa'
+
+type Props = TarefaClass
 
 const Tarefa = ({
   descricao: descricaoOriginal,
@@ -18,11 +20,13 @@ const Tarefa = ({
   const dispatch = useDispatch()
   const [estaEditando, setEstaEditando] = useState(false)
   const [descricao, setDescricao] = useState('')
+
   useEffect(() => {
     if (descricaoOriginal.length > 0) {
       setDescricao(descricaoOriginal)
     }
   }, [descricaoOriginal])
+
   function cancelarEdicao() {
     setEstaEditando(false)
     setDescricao(descricaoOriginal)
