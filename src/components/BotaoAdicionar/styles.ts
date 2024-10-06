@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
+
 export const Circulo = styled(Link)`
   height: 64px;
   width: 64px;
